@@ -8,5 +8,5 @@ st.set_page_config(
 
 st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas?</h1>", unsafe_allow_html=True)
 
-st.selectbox('Select', ["Water", "Grass", "Fire"])
+st.selectbox('Selecciona un tipo', ["Water", "Grass", "Fire"])
 
