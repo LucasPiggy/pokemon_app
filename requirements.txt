@@ -1,3 +1,4 @@
+streamlit
 st-clickable-images
 st-pages
 imageio
