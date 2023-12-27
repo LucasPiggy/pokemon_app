@@ -21,8 +21,8 @@ with tab_ruta:
         if nombre_ruta != "":
             try:
                 resultados = encounters["lugares"][0][nombre_ruta][0]
-                    for tipo in resultados:
-                        st.text(resultados[tipo])
+                for tipo in resultados:
+                    st.text(resultados[tipo])
             except:
                 st.text("Nombre de ruta incorrecto")
     
