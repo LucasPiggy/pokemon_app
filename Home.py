@@ -14,4 +14,5 @@ st.selectbox('Selecciona un tipo', ["Water", "Grass", "Fire"],
 
 st.image('./mapa.png')
 
-st.text_input('Busca por nombre')
+nombre_pok = st.text_input('Busca por nombre')
+st.text(nombre_pok)
