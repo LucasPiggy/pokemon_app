@@ -1,5 +1,6 @@
 import streamlit as st
 import base64
+import json
 
 st.set_page_config(
     page_title="Onta pokemon?",
@@ -14,7 +15,10 @@ tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 with tab_ruta:
     
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
-    st.text(nombre_ruta)
+
+    with open("encounters.json", "r") as file:
+        encounters = json.load(file)
+        st.text(encounters[nombre_ruta])
     
     col1, col2 = st.columns(2)
     with col2:
