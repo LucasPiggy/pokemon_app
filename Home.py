@@ -20,4 +20,12 @@ with tab_ruta:
     with col2:
         st.image('./mapa.png')
 
+with tab_pok:
+    
+    nombre_pok = st.text_input('Buscador de Pokémon por nombre')
+    
+    col1, col2 = st.columns(2)
+    with col2:
+        st.image('./mapa.png')
+
 
