@@ -20,15 +20,15 @@ with tab_ruta:
 
     with col1:
         with open("encounters.json", "r") as file:
-        encounters = json.load(file)
-        if nombre_ruta != "":
-            try:
-                resultados = encounters["lugares"][0][nombre_ruta][0]
-                for tipo in resultados:
-                    st.text(tipo)
-                    st.text(resultados[tipo][0])
-            except:
-                st.text("Nombre de ruta incorrecto")
+            encounters = json.load(file)
+            if nombre_ruta != "":
+                try:
+                    resultados = encounters["lugares"][0][nombre_ruta][0]
+                    for tipo in resultados:
+                        st.text(tipo)
+                        st.text(resultados[tipo][0])
+                except:
+                    st.text("Nombre de ruta incorrecto")
     
     with col2:
         st.image('./mapa.png')
