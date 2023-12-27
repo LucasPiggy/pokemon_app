@@ -1,8 +1,8 @@
 {"lugares":[
   {"dewford-town":[
     {"land":[{"mankey":20},{"tyrogue":20}], 
-     "old-rod":[{"spheal",70}],
-     "good-rod":[{"seel",20}]
+     "old-rod":[{"spheal":70}],
+     "good-rod":[{"seel":20}]
     }
   ]}
 ]
