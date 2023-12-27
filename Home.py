@@ -12,12 +12,11 @@ st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas
 tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 
 with tab_ruta:
+    
+    nombre_ruta = st.text_input('Buscador de ruta por nombre')
+    st.text(nombre_ruta)
+    
     col1, col2 = st.columns(2)
-
-    with col1:
-        nombre_ruta = st.text_input('Buscador de ruta por nombre')
-        st.text(nombre_ruta)
-
     with col2:
         st.image('./mapa.png')
 
