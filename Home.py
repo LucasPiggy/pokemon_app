@@ -23,6 +23,7 @@ with tab_ruta:
 with tab_pok:
     
     nombre_pok = st.text_input('Buscador de Pokémon por nombre')
+    st.text(nombre_ruta)
     
     col1, col2 = st.columns(2)
     with col2:
