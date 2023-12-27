@@ -15,8 +15,11 @@ tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 with tab_ruta:
     
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
+    
+    col1, col2 = st.columns(2)
 
-    with open("encounters.json", "r") as file:
+    with col1:
+        with open("encounters.json", "r") as file:
         encounters = json.load(file)
         if nombre_ruta != "":
             try:
@@ -27,7 +30,6 @@ with tab_ruta:
             except:
                 st.text("Nombre de ruta incorrecto")
     
-    col1, col2 = st.columns(2)
     with col2:
         st.image('./mapa.png')
 
