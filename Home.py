@@ -20,7 +20,9 @@ with tab_ruta:
         encounters = json.load(file)
         if nombre_ruta != "":
             try:
-                st.text(encounters["lugares"][0][nombre_ruta])
+                resultados = encounters["lugares"][0][nombre_ruta][0]
+                    for tipo in resultados:
+                        st.text(resultados[tipo])
             except:
                 st.text("Nombre de ruta incorrecto")
     
