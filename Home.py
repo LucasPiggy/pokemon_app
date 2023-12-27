@@ -16,7 +16,7 @@ with tab1:
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
     st.text(nombre_ruta)
 
-with col2:
-    st.image('./mapa.png')
+    with col2:
+        st.image('./mapa.png')
 
 
