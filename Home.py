@@ -10,3 +10,5 @@ st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas
 
 st.selectbox('Selecciona un tipo', ["Water", "Grass", "Fire"])
 
+st.image('./mapa.png')
+
