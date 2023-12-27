@@ -12,7 +12,10 @@ st.selectbox('Selecciona un tipo', ["Water", "Grass", "Fire"],
              index = None,
              placeholder = "Ningún tipo seleccionado")
 
-st.image('./mapa.png')
+col1, col2 = st.columns(2)
+
+with col2:
+    st.image('./mapa.png')
 
 nombre_pok = st.text_input('Busca por nombre')
 st.text(nombre_pok)
