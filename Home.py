@@ -18,7 +18,8 @@ with tab_ruta:
 
     with open("encounters.json", "r") as file:
         encounters = json.load(file)
-        st.text(encounters[nombre_ruta])
+        if nombre_ruta != "":
+            st.text(encounters[nombre_ruta])
     
     col1, col2 = st.columns(2)
     with col2:
