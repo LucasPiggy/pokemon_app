@@ -15,8 +15,8 @@ st.selectbox('Selecciona un tipo', ["Water", "Grass", "Fire"],
 # Columnas de posición
 col1, col2 = st.columns(2)
 
-nombre_pok = st.text_input('Busca por nombre')
-st.text(nombre_pok)
+nombre_ruta = st.text_input('Buscador de ruta por nombre')
+st.text(nombre_ruta)
 
 with col2:
     st.image('./mapa.png')
