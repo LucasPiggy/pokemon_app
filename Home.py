@@ -22,7 +22,8 @@ with tab_ruta:
             try:
                 resultados = encounters["lugares"][0][nombre_ruta][0]
                 for tipo in resultados:
-                    st.text(resultados[tipo])
+                    st.text(tipo)
+                    st.text(resultados[tipo][0])
             except:
                 st.text("Nombre de ruta incorrecto")
     
@@ -33,7 +34,7 @@ with tab_ruta:
 with tab_pok:
     
     nombre_pok = st.text_input('Buscador de Pokémon por nombre')
-    st.text(nombre_ruta)
+    st.text(nombre_pok)
     
     col1, col2 = st.columns(2)
     with col2:
