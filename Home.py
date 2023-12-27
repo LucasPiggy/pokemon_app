@@ -19,7 +19,10 @@ with tab_ruta:
     with open("encounters.json", "r") as file:
         encounters = json.load(file)
         if nombre_ruta != "":
-            st.text(encounters["lugares"][0][nombre_ruta])
+            try:
+                st.text(encounters["lugares"][0][nombre_ruta])
+            except:
+                st.text("Nombre de ruta incorrecto")
     
     col1, col2 = st.columns(2)
     with col2:
