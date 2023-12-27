@@ -14,3 +14,4 @@ st.selectbox('Selecciona un tipo', ["Water", "Grass", "Fire"],
 
 st.image('./mapa.png')
 
+st.text_input('Busca por nombre')
