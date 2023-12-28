@@ -25,11 +25,11 @@ with tab_ruta:
             try:
                 resultados = encounters["lugares"][0][nombre_ruta][0]
                 for tipo in resultados:
-                    st.text(tipo)
-                    res = resultados[tipo]
                     n = 0
                     for pok in res:
                         with columnas[n]:
+                            st.text(tipo)
+                            res = resultados[tipo]
                             st.text(list(pok.keys())[0])
                             st.text(list(pok.values())[0])
                             funciones.get_sprite(list(pok.keys())[0])
