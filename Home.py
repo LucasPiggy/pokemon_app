@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 import json
-import funciones as f
+import funciones
 from PIL import Image
 
 st.set_page_config(
@@ -31,7 +31,7 @@ with tab_ruta:
                         res = resultados[tipo][0]
                         for pok in res:
                             st.text(pok)
-                            f.get_sprite(pok)
+                            funciones.get_sprite(pok)
                             file_ = open("spriteGIF.gif", "rb")
                             contents = file_.read()
                             data_url = base64.b64encode(contents2).decode("utf-8")
