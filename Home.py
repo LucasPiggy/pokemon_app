@@ -30,7 +30,7 @@ with tab_ruta:
                         st.text(tipo)
                         res = resultados[tipo]
                         for pok in res:
-                            st.text(list(pok.keys())[0])
+                            st.text(list(pok.keys())[0],list(pok.values())[0])
                             funciones.get_sprite(list(pok.keys())[0])
                             file_ = open("spriteGIF.gif", "rb")
                             contents = file_.read()
