@@ -1,6 +1,7 @@
 import streamlit as st
 import base64
 import json
+import funciones as f
 
 st.set_page_config(
     page_title="Onta pokemon?",
@@ -26,7 +27,18 @@ with tab_ruta:
                     resultados = encounters["lugares"][0][nombre_ruta][0]
                     for tipo in resultados:
                         st.text(tipo)
-                        st.text(resultados[tipo])
+                        pok = resultados[tipo]
+                        st.text(pok)
+                        f.get_sprite(pok)
+                        file_ = open("spriteGIF.gif", "rb")
+                        contents = file_.read()
+                        data_url = base64.b64encode(contents2).decode("utf-8")
+                        file_.close()
+                        dim = Image.open("spriteGIF.gif").size
+                        w = dim[0] * 1.8
+                        h = dim[1] * 1.8
+                        st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width={w} height={h} alt="cat gif">',
+                                    unsafe_allow_html=True)
                 except:
                     st.text("Nombre de ruta incorrecto")
     
