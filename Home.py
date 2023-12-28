@@ -32,8 +32,8 @@ with tab_ruta:
                         for pok in res:
                             st.text(pok)
                             funciones.get_sprite(pok)
-                            st.text("Hola")
                             file_ = open("spriteGIF.gif", "rb")
+                            st.text("Hola")
                             contents = file_.read()
                             data_url = base64.b64encode(contents2).decode("utf-8")
                             file_.close()
