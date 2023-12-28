@@ -39,7 +39,7 @@ with tab_ruta:
                             dim = Image.open("spriteGIF.gif").size
                             w = dim[0] * 1.8
                             h = dim[1] * 1.8
-                            st.markdown(f'<img src="data:image/gif;base64,{data_url2}"  width={w} height={h} alt="cat gif">',
+                            st.markdown(f'<img src="data:image/gif;base64,{data_url}"  width={w} height={h} alt="cat gif">',
                                         unsafe_allow_html=True)
                 except:
                     st.text("Nombre de ruta incorrecto")
