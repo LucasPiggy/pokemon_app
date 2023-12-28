@@ -1,3 +1,5 @@
+import requests as r
+
 def get_sprite(pokemon):
     url = f"https://play.pokemonshowdown.com/sprites/xyani/{pokemon}.gif"
     response = r.get(url)
