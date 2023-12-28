@@ -2,6 +2,7 @@ import streamlit as st
 import base64
 import json
 import funciones as f
+from PIL import Image
 
 st.set_page_config(
     page_title="Onta pokemon?",
