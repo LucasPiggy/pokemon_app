@@ -11,14 +11,14 @@ st.set_page_config(
 
 st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas?</h1>", unsafe_allow_html=True)
 
-# Columnas y tabs de posición
 tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 
 with tab_ruta:
     
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
     st.image('./mapa.png')
-
+    col1, col2, col3, col4, col5 = st.columns(5)
+    columnas = [col1, col2, col3, col4, col5]
     with open("encounters.json", "r") as file:
         encounters = json.load(file)
         if nombre_ruta != "":
@@ -27,19 +27,22 @@ with tab_ruta:
                 for tipo in resultados:
                     st.text(tipo)
                     res = resultados[tipo]
+                    n = 0
                     for pok in res:
-                        st.text(list(pok.keys())[0])
-                        st.text(list(pok.values())[0])
-                        funciones.get_sprite(list(pok.keys())[0])
-                        file_ = open("spriteGIF.gif", "rb")
-                        contents = file_.read()
-                        data_url = base64.b64encode(contents).decode("utf-8")
-                        file_.close()
-                        dim = Image.open("spriteGIF.gif").size
-                        w = dim[0] * 1.8
-                        h = dim[1] * 1.8
-                        st.markdown(f'<img src="data:image/gif;base64,{data_url}"  width={w} height={h} alt="cat gif">',
-                                        unsafe_allow_html=True)
+                        with columnas[n]:
+                            st.text(list(pok.keys())[0])
+                            st.text(list(pok.values())[0])
+                            funciones.get_sprite(list(pok.keys())[0])
+                            file_ = open("spriteGIF.gif", "rb")
+                            contents = file_.read()
+                            data_url = base64.b64encode(contents).decode("utf-8")
+                            file_.close()
+                            dim = Image.open("spriteGIF.gif").size
+                            w = dim[0] * 1.8
+                            h = dim[1] * 1.8
+                            st.markdown(f'<img src="data:image/gif;base64,{data_url}"  width={w} height={h} alt="cat gif">',
+                                            unsafe_allow_html=True)
+                            n += 1
             except:
                 st.text("Nombre de ruta incorrecto")
 
