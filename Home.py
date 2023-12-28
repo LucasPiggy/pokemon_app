@@ -33,8 +33,8 @@ with tab_ruta:
                             st.text(pok)
                             funciones.get_sprite(pok)
                             file_ = open("spriteGIF.gif", "rb")
-                            st.text(file_)
                             contents = file_.read()
+                            st.text(contents)
                             data_url = base64.b64encode(contents2).decode("utf-8")
                             file_.close()
                             dim = Image.open("spriteGIF.gif").size
