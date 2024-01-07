@@ -26,7 +26,7 @@ with tab_ruta:
                 for tipo in resultados:
                     n = 0
                     res = resultados[tipo]
-                    st.text(tipo)
+                    st.subheader(tipo.upper().replace("-"," "))
                     col1, col2, col3, col4, col5 = st.columns(5)
                     columnas = [col1, col2, col3, col4, col5]
                     for pok in res:
