@@ -29,7 +29,7 @@ with tab_ruta:
                     res = resultados[tipo]
                     st.text(tipo)
                     for pok in res:
-                        with columnas[n]:
+                        with columnas[n%5]:
                             st.text(list(pok.keys())[0])
                             st.text(list(pok.values())[0])
                             funciones.get_sprite(list(pok.keys())[0])
