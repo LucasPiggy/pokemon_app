@@ -17,8 +17,7 @@ with tab_ruta:
     
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
     st.image('./mapa.png')
-    col1, col2, col3, col4, col5 = st.columns(5)
-    columnas = [col1, col2, col3, col4, col5]
+
     with open("encounters.json", "r") as file:
         encounters = json.load(file)
         if nombre_ruta != "":
@@ -28,6 +27,8 @@ with tab_ruta:
                     n = 0
                     res = resultados[tipo]
                     st.text(tipo)
+                    col1, col2, col3, col4, col5 = st.columns(5)
+                    columnas = [col1, col2, col3, col4, col5]
                     for pok in res:
                         with columnas[n%5]:
                             st.text(list(pok.keys())[0])
