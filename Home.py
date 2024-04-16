@@ -57,7 +57,7 @@ with tab_pok:
     col1, col2 = st.columns(2)
     with col2:
         st.image('./mapa.png')
-        data = pd.read_csv(r'./encountersCSV.csv')
+        data = pd.read_csv(r'./encountersCSV.csv',sep=";")
         st.table(data)
 
     
