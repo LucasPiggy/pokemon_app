@@ -56,7 +56,7 @@ with tab_pok:
     col1, col2 = st.columns(2)
     with col2:
         st.image('./mapa.png')
-        data = pd.read_csv('./encounters.xlsx')
+        data = pd.read_excel('./encounters.xlsx')
         st.table(data)
 
     
