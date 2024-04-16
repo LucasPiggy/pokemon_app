@@ -57,7 +57,7 @@ with tab_pok:
         st.image('./mapa.png')
 
 with tab_mapa:
-    st.image('./mapa.png', width = 200)
+    st.image('./mapa.png', width = 2000)
     
 
 
