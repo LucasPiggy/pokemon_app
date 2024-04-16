@@ -45,7 +45,7 @@ with tab_ruta:
     imdata = base64.b64decode(map_data["imageData"])
     npimg = np.frombuffer(imdata, dtype=np.uint8);
     image = cv2.imdecode(npimg, 1)
-    color = (0,0,255)
+    color = (255,0,0)
     
     for shape in map_data["shapes"]:
         if shape["label"] == location:
@@ -53,7 +53,25 @@ with tab_ruta:
             pt = np.array(pt, np.int32)
             image_pol = cv2.fillPoly(image, [pt], color)
             cv2.imwrite(r"./poly.png",image_pol)
+            cv2.imwrite(r"./empty.png",image_pol)
             st.image(image_pol)
+            
+            frames_pop = []
+            for i in ["./empty.png","./poly.png"]:
+                new_frame_pop = Image.open(i)
+                frames_pop.append(new_frame_pop)
+    
+            frames_pop[0].save('png_to_gif.gif', format='GIF',
+                       append_images=frames_pop[1:],
+                       save_all=True,
+                       duration=1000, loop=0)
+            
+            file_ = open("png_to_gif.gif", "rb")
+                contents4 = file_.read()
+                data_url4 = base64.b64encode(contents4).decode("utf-8")
+                file_.close()
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="450" height="400" alt="gif">',
+                                                unsafe_allow_html=True)
    
 
 with tab_pok:
