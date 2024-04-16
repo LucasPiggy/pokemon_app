@@ -5,7 +5,6 @@ import funciones
 from PIL import Image
 import pandas as pd
 import numpy as np
-import opencv
 import cv2
 import base64
 import imageio as iio
