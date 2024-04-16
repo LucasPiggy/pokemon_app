@@ -1,4 +1,4 @@
-pip install opencv-python
+!pip install opencv-python
 import streamlit as st
 import base64
 import json
