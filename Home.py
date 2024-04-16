@@ -1,8 +1,8 @@
+pip install opencv-python
 import streamlit as st
 import base64
 import json
 import funciones
-from PIL import Image
 import pandas as pd
 import numpy as np
 import cv2
