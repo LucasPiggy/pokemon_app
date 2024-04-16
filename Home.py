@@ -37,7 +37,8 @@ with tab_ruta:
     imdata = base64.b64decode(map_data["imageData"])
     npimg = np.frombuffer(imdata, dtype=np.uint8);
     image = cv2.imdecode(npimg, 1)
-
+    color = (100,0,220)
+    
     for shape in map_data["shapes"]:
         if shape["label"] == location:
             pt = np.array(shape["points"], np.int32)
