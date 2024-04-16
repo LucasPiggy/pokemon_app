@@ -60,12 +60,12 @@ with tab_ruta:
                 new_frame_pop = Image.open(i)
                 frames_pop.append(new_frame_pop)
     
-            frames_pop[0].save('png_to_gif.gif', format='GIF',
+            frames_pop[0].save('./png_to_gif.gif', format='GIF',
                        append_images=frames_pop[1:],
                        save_all=True,
                        duration=20, loop=0)
             
-            file_ = open("png_to_gif.gif", "rb")
+            file_ = open("./png_to_gif.gif", "rb")
             contents4 = file_.read()
             data_url4 = base64.b64encode(contents4).decode("utf-8")
             file_.close()
