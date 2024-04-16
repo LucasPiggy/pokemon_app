@@ -63,7 +63,7 @@ with tab_ruta:
             frames_pop[0].save('./png_to_gif.gif', format='GIF',
                        append_images=frames_pop[1:],
                        save_all=True,
-                       duration=20, loop=0)
+                       duration=1000, loop=0)
             
             file_ = open("./png_to_gif.gif", "rb")
             contents4 = file_.read()
