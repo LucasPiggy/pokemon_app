@@ -18,7 +18,11 @@ with tab_ruta:
     data = pd.read_csv(r'./encountersCSV.csv',sep=";")
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
     options = set(data["location"])
-    selectbox = st.selectbox("Select:",options)
+    location = st.selectbox("Select:",options)
+
+    search_res = data.loc[data["location"] == location]
+    st.table(search_res)
+    
     st.image('./mapa.png')
 
     
