@@ -11,7 +11,7 @@ st.set_page_config(
 
 st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas?</h1>", unsafe_allow_html=True)
 
-tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
+tab_ruta, tab_pok, tab_mapa = st.tabs(["Ruta", "Pokémon", "Mapa"])
 
 with tab_ruta:
     
@@ -55,5 +55,9 @@ with tab_pok:
     col1, col2 = st.columns(2)
     with col2:
         st.image('./mapa.png')
+
+with tab_mapa:
+    st.image('./mapa.png', width = 200)
+    
 
 
