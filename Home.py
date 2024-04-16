@@ -67,10 +67,10 @@ with tab_ruta:
                        duration=1000, loop=0)
             
             file_ = open("png_to_gif.gif", "rb")
-                contents4 = file_.read()
-                data_url4 = base64.b64encode(contents4).decode("utf-8")
-                file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="450" height="400" alt="gif">',
+            contents4 = file_.read()
+            data_url4 = base64.b64encode(contents4).decode("utf-8")
+            file_.close()
+            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="450" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
    
 
