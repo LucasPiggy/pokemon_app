@@ -21,8 +21,8 @@ with tab_ruta:
     location = st.selectbox("Select:",loc_options)
 
     search_res = data.loc[data["location"] == location]
-    n_encounters = len(set(search_res["encounter"]))
-    st.text(n_encounters)
+    n_encounters = len(set(search_res["encounter"])) # Compruebas el num de encounters posibles (si hay pescando, tierra ... )
+    
     st.table(search_res)
     
     st.image('./mapa.png')
