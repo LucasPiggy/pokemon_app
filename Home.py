@@ -28,7 +28,7 @@ with tab_ruta:
     st.image('./mapa.png')
     with open("encounters.json", "r") as file:
         encounters = json.load(file)
-        if nombre_ruta != "":
+        if location != "":
             try:
                 resultados = encounters["lugares"][0][nombre_ruta][0]
                 for tipo in resultados:
