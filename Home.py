@@ -38,7 +38,9 @@ with tab_ruta:
     npimg = np.frombuffer(imdata, dtype=np.uint8);
     image = cv2.imdecode(npimg, 1)
 
-    st.image(image)
+    for shape in map_data["shapes"]:
+        if shape["label"] == location:
+            st.text(location)
    
 
 with tab_pok:
