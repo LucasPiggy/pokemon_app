@@ -16,11 +16,13 @@ tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 
 with tab_ruta:
     data = pd.read_csv(r'./encountersCSV.csv',sep=";")
-    nombre_ruta = st.text_input('Buscador de ruta por nombre')
-    options = set(data["location"])
-    location = st.selectbox("Select:",options)
+    # nombre_ruta = st.text_input('Buscador de ruta por nombre')
+    loc_options = set(data["location"])
+    location = st.selectbox("Select:",loc_options)
 
     search_res = data.loc[data["location"] == location]
+    n_encounters = len(set(search_res["encounters"]))
+    st.text(n_encounters)
     st.table(search_res)
     
     st.image('./mapa.png')
