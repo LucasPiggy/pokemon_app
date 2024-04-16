@@ -37,7 +37,7 @@ with tab_ruta:
     
     st.table(search_res)
     
-    st.image('./mapa.png')
+    # st.image('./mapa.png')
 
     map_file = open(f"./hoenn_json.json")
     map_data = json.load(map_file)
@@ -54,7 +54,6 @@ with tab_ruta:
             image_pol = cv2.fillPoly(image, [pt], color)
             cv2.imwrite(r"./poly.png",image_pol)
             cv2.imwrite(r"./empty.png",image_pol)
-            st.image(image_pol)
             
             frames_pop = []
             for i in ["./empty.png","./poly.png"]:
