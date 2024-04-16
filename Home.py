@@ -43,7 +43,7 @@ with tab_ruta:
         if shape["label"] == location:
             pt = np.array(shape["points"], np.int32)
             image_pol = cv2.fillPoly(image, [pt], color)
-            cv2.imwrite(r"./maps/poly.png",image_pol)
+            cv2.imwrite(r"./poly.png",image_pol)
    
 
 with tab_pok:
