@@ -14,6 +14,14 @@ st.set_page_config(
     page_icon="🔅"
 )
 
+def diag(punto):
+    res = []
+    res.append(punto[0])
+    res.append([punto[0][0],punto[1][1]])
+    res.append(punto[1])
+    res.append([punto[1][0],punto[0][1]])
+    return res
+    
 st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas?</h1>", unsafe_allow_html=True)
 
 tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
