@@ -30,7 +30,7 @@ with tab_ruta:
         encounters = json.load(file)
         if location != "":
             try:
-                resultados = encounters["lugares"][0][nombre_ruta][0]
+                resultados = encounters["lugares"][0][location][0]
                 for tipo in resultados:
                     n = 0
                     res = resultados[tipo]
