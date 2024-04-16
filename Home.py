@@ -3,6 +3,7 @@ import base64
 import json
 import funciones
 from PIL import Image
+import pandas as pd
 
 st.set_page_config(
     page_title="Onta pokemon?",
