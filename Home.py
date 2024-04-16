@@ -15,11 +15,13 @@ st.markdown("<h1 style='text-align: center; color: grey;'>¿Qué Pokémon Buscas
 tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 
 with tab_ruta:
-    
+    data = pd.read_csv(r'./encountersCSV.csv',sep=";")
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
-    selectbox = st.selectbox("Sel:",["Prueba1","Prueba2"])
+    options = set(data["location"])
+    selectbox = st.selectbox("Select:",options)
     st.image('./mapa.png')
 
+    
    
 
 with tab_pok:
@@ -30,8 +32,7 @@ with tab_pok:
     col1, col2 = st.columns(2)
     with col2:
         st.image('./mapa.png')
-        data = pd.read_csv(r'./encountersCSV.csv',sep=";")
-        st.table(data)
+        
 
     
 
