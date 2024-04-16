@@ -41,7 +41,8 @@ with tab_ruta:
     
     for shape in map_data["shapes"]:
         if shape["label"] == location:
-            pt = np.array(shape["points"], np.int32)
+            pt = diag(i["points"])
+            pt = np.array(pt, np.int32)
             image_pol = cv2.fillPoly(image, [pt], color)
             cv2.imwrite(r"./poly.png",image_pol)
             st.image(image_pol)
