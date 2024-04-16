@@ -16,6 +16,7 @@ tab_ruta, tab_pok = st.tabs(["Ruta", "Pokémon"])
 with tab_ruta:
     
     nombre_ruta = st.text_input('Buscador de ruta por nombre')
+    selectbox = st.selectbox("Sel:",["Prueba1","Prueba2"])
     st.image('./mapa.png')
 
     with open("encounters.json", "r") as file:
