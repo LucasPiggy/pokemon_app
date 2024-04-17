@@ -73,7 +73,8 @@ with tab_ruta:
                                                 unsafe_allow_html=True)
     tab_land, tab_fishing = st.tabs(["Land","Fishing"])
     with tab_land:
-        st.text("prueba")
+        expander = st.expander("prueba")
+        expander.write("Prueba2")
     
    
 
