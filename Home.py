@@ -82,7 +82,14 @@ with tab_ruta:
             col1, col2, col3, col4, col5 = st.columns(5)
             cols = [col1, col2, col3, col4, col5]
             for pok in pok_res:
-                st.text(float(search.loc[search["pokemon"] == pok]["prob"]))
+                funciones.get_sprite(pok)
+                file_ = open("./spriteGIF.gif.gif", "rb")
+                contents4 = file_.read()
+                data_url4 = base64.b64encode(contents4).decode("utf-8")
+                file_.close()
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
+                                                    unsafe_allow_html=True)
+                st.text(int(search.loc[search["pokemon"] == pok]["prob"]))
             
            
 
