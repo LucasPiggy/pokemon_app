@@ -74,7 +74,7 @@ with tab_ruta:
 
     for encounter in ["land","old-rod","good-rod","super-rod","any-rod"]:
         search_n = len(search_res.loc[search_res["encounter"] == encounter])
-        exp = st.expander(f"{encounter} ({n_land})")
+        exp = st.expander(f"{encounter} ({search_n})")
            
 
 with tab_pok:
