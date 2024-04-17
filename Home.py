@@ -73,8 +73,7 @@ with tab_ruta:
                                                 unsafe_allow_html=True)
     
     n_land = len(search_res.loc[search_res["encounter"] == "land"])
-    st.text(n_land)
-    exp_land = st.expander("Land")
+    exp_land = st.expander(f"Land{n_land}")
     exp_fishing = st.expander("Fishing")
 
     with exp_land:
