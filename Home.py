@@ -82,7 +82,7 @@ with tab_ruta:
             col1, col2, col3, col4, col5 = st.columns(5)
             cols = [col1, col2, col3, col4, col5]
             for pok in pok_res:
-                st.text(search.loc[search["pokemon"] == pok]["prob"])
+                st.text(float(search.loc[search["pokemon"] == pok]["prob"]))
             
            
 
