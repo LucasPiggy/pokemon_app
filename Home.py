@@ -83,7 +83,7 @@ with tab_ruta:
             cols = [col1, col2, col3, col4, col5]
             for pok in pok_res:
                 funciones.get_sprite(pok)
-                file_ = open("./spriteGIF.gif.gif", "rb")
+                file_ = open("./spriteGIF.gif", "rb")
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
