@@ -71,10 +71,8 @@ with tab_ruta:
             file_.close()
             st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
-    tab_land, tab_fishing = st.tabs(["Land","Fishing"])
-    with tab_land:
-        expander = st.expander("prueba")
-        expander.write("Prueba2")
+    exp_land = st.expander("Land")
+    exp_fishing = st.expander("Fishing")
     
    
 
