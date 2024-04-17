@@ -71,12 +71,16 @@ with tab_ruta:
             file_.close()
             st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
+    
+    n_land = len(data.loc[data["encounter"] == "land"])
+    st.text(n_land)
     exp_land = st.expander("Land")
     exp_fishing = st.expander("Fishing")
 
-    for exp in [exp_land, exp_fishing]:
-        with exp:
-            col1, col2, col3, col4, col5 = st.columns(5)
+    with exp_land:
+        col1, col2, col3, col4, col5 = st.columns(5)
+        cols = [col1, col2, col3, col4, col5] 
+        
     
    
 
