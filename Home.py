@@ -31,6 +31,7 @@ with tab_ruta:
     # nombre_ruta = st.text_input('Buscador de ruta por nombre')
     loc_options = set(data["location"])
     location = st.selectbox("Select:",loc_options)
+    location = st.text_input('Buscador de ruta por nombre')
 
     search_res = data.loc[data["location"] == location]
     n_encounters = len(set(search_res["encounter"])) # Compruebas el num de encounters posibles (si hay pescando, tierra ... )
@@ -72,8 +73,8 @@ with tab_ruta:
             st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
     tab_land = st.tabs(["Land"])
-    with tab_land:
-        exp = st.expander("Prueba")
+    """with tab_land:
+        exp = st.expander("Prueba")"""
    
 
 with tab_pok:
