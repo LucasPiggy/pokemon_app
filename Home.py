@@ -71,17 +71,11 @@ with tab_ruta:
             file_.close()
             st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
-    
-    n_land = len(search_res.loc[search_res["encounter"] == "land"])
-    exp_land = st.expander(f"Land{n_land}")
-    exp_fishing = st.expander("Fishing")
 
-    with exp_land:
-        col1, col2, col3, col4, col5 = st.columns(5)
-        cols = [col1, col2, col3, col4, col5] 
-        
-    
-   
+    for encounter in ["land","old-rod","good-rod","super-rod","any-rod"]:
+        search_n = len(search_res.loc[search_res["encounter"] == encounter])
+        exp = st.expander(f"{encounter} ({n_land})")
+           
 
 with tab_pok:
     
