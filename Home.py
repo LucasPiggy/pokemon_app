@@ -73,10 +73,13 @@ with tab_ruta:
                                                 unsafe_allow_html=True)
 
     for encounter in ["land","old-rod","good-rod","super-rod","any-rod"]:
-        search_n = len(search_res.loc[search_res["encounter"] == encounter])
+        search = search_res.loc[search_res["encounter"] == encounter]
+        pok_names = set(search["pokemon"])
+        search_n = len(search)
         exp = st.expander(f"{encounter} ({search_n})")
 
         with exp:
+            st.text(pok_names)
             col1, col2, col3, col4, col5 = st.columns(5)
             cols = [col1, col2, col3, col4, col5]
            
