@@ -69,7 +69,7 @@ with tab_ruta:
             contents4 = file_.read()
             data_url4 = base64.b64encode(contents4).decode("utf-8")
             file_.close()
-            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
+            st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
 
     for encounter in ["land","old-rod","good-rod","super-rod","any-rod"]:
@@ -87,7 +87,7 @@ with tab_ruta:
                 contents4 = file_.read()
                 data_url4 = base64.b64encode(contents4).decode("utf-8")
                 file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
+                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
                                                     unsafe_allow_html=True)
                 st.text(int(search.loc[search["pokemon"] == pok]["prob"]))
             
