@@ -72,7 +72,7 @@ with tab_ruta:
             st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="720" height="400" alt="gif">',
                                                 unsafe_allow_html=True)
     
-    n_land = len(data.loc[data["encounter"] == "land"])
+    n_land = len(res_search.loc[res_search["encounter"] == "land"])
     st.text(n_land)
     exp_land = st.expander("Land")
     exp_fishing = st.expander("Fishing")
