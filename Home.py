@@ -73,6 +73,10 @@ with tab_ruta:
                                                 unsafe_allow_html=True)
     exp_land = st.expander("Land")
     exp_fishing = st.expander("Fishing")
+
+    for exp in [exp_land, exp_fishing]:
+        with exp:
+            col1, col2, col3, col4, col5 = st.columns(5)
     
    
 
