@@ -76,20 +76,24 @@ with tab_ruta:
         search = search_res.loc[search_res["encounter"] == encounter]
         pok_res = set(search["pokemon"])
         search_n = len(search)
-        exp = st.expander(f"{encounter} ({search_n})")
-
-        with exp:
-            col1, col2, col3, col4, col5 = st.columns(5)
-            cols = [col1, col2, col3, col4, col5]
-            for pok in pok_res:
-                funciones.get_sprite(pok)
-                file_ = open("./spriteGIF.gif", "rb")
-                contents4 = file_.read()
-                data_url4 = base64.b64encode(contents4).decode("utf-8")
-                file_.close()
-                st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
-                                                    unsafe_allow_html=True)
-                st.text(int(search.loc[search["pokemon"] == pok]["prob"]))
+        if search_n != 0:
+            exp = st.expander(f"{encounter} ({search_n})")
+    
+            with exp:
+                col1, col2, col3, col4, col5 = st.columns(5)
+                cols = [col1, col2, col3, col4, col5]
+                n = 0
+                for pok in pok_res:
+                    with cols[n%5]:
+                        funciones.get_sprite(pok)
+                        file_ = open("./spriteGIF.gif", "rb")
+                        contents4 = file_.read()
+                        data_url4 = base64.b64encode(contents4).decode("utf-8")
+                        file_.close()
+                        st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
+                                                            unsafe_allow_html=True)
+                        st.text(int(search.loc[search["pokemon"] == pok]["prob"]))
+                    n += 1
             
            
 
