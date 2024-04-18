@@ -85,6 +85,7 @@ with tab_ruta:
                 n = 0
                 for pok in pok_res:
                     with cols[n%5]:
+                        st.text(pok)
                         funciones.get_sprite(pok)
                         file_ = open("./spriteGIF.gif", "rb")
                         contents4 = file_.read()
