@@ -94,7 +94,7 @@ with tab_ruta:
                                                             unsafe_allow_html=True)
                         prob = int(search.loc[search["pokemon"] == pok]["prob"])
                         for i in funciones.get_tipo(pok):
-                            st.image(Image.open(f'./tipos/{i}.png'))
+                            st.image(Image.open(f'./tipos/{i}.png'), width = 40)
                         st.text(f"{prob}%")
                     n += 1
             
