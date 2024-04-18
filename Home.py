@@ -111,6 +111,8 @@ with tab_pok:
     pokemon = st.selectbox("Select:",pok_options, placeholder="Selecciona un Pokémon")
 
     pokemon = st.text_input("O escríbelo manualmente")
+
+    st.text(pokemon)
     
         
 
