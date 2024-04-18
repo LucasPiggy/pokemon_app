@@ -98,6 +98,7 @@ with tab_ruta:
                             st.image(Image.open(f'./tipos/{i}.png'), width = 75)
                         if len(tipos) == 1:
                             st.text("")
+                            st.text("")
                         st.text(f"{prob}%")
                     n += 1
             
