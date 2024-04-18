@@ -93,8 +93,11 @@ with tab_ruta:
                         st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="70" height="70" alt="gif">',
                                                             unsafe_allow_html=True)
                         prob = int(search.loc[search["pokemon"] == pok]["prob"])
-                        for i in funciones.get_tipo(pok):
+                        tipos = funciones.get_tipo(pok)
+                        for i in tipos:
                             st.image(Image.open(f'./tipos/{i}.png'), width = 75)
+                        if len(tipos) == 1:
+                            st.text("")
                         st.text(f"{prob}%")
                     n += 1
             
