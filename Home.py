@@ -108,12 +108,10 @@ with tab_ruta:
 with tab_pok:
     data = pd.read_csv(r'./encountersCSV.csv',sep=";")
     tipos = set(data["tipo1"]).union(set(data["tipo2"]))
+    tipos.remove("nan")
     caja_tipo = st.selectbox("Tipo:", tipos, placeholder="Selecciona un Tipo")
     pok_options = set(data["pokemon"])
     pokemon = st.selectbox("Select:",pok_options, placeholder="Selecciona un Pokémon")
-
-    pokemon = st.text_input("O escríbelo manualmente")
-
     st.text(pokemon)
     
         
