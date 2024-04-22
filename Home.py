@@ -113,9 +113,7 @@ with tab_pok:
     probs = results["prob"]
     types = results["encounter"]
 
-    tipos_pok = results.reset_index()["tipo1"][0], results.reset_index()["tipo2"][0]
-    st.text(tipos_pok)
-    
+    tipos_pok = [results.reset_index()["tipo1"][0], results.reset_index()["tipo2"][0]]    
 
     col1, col2 = st.columns(2)
 
@@ -128,6 +126,9 @@ with tab_pok:
         file_.close()
         st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
                                                             unsafe_allow_html=True)
+        for tipo in tipos_pok:
+            st.image(Image.open(f'./tipos/{tipo}.png'), width = 75)
+            
         
 
     with col2:
