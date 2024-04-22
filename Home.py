@@ -126,7 +126,7 @@ with tab_pok:
 
     with col2:
         for loc, prob in zip(locations, probs):
-            st.text(f"Lugar: {loc} - {prob}%")
+            st.text(f"Lugar: {loc} \n{prob}%")
             
         
 
