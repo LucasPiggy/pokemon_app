@@ -30,7 +30,7 @@ with tab_ruta:
     data = pd.read_csv(r'./encountersCSV.csv',sep=";")
     # nombre_ruta = st.text_input('Buscador de ruta por nombre')
     loc_options = set(data["location"])
-    location = st.selectbox("Select:",loc_options)
+    location = st.selectbox("Selecciona una ruta:",loc_options)
 
     search_res = data.loc[data["location"] == location]
     n_encounters = len(set(search_res["encounter"])) # Compruebas el num de encounters posibles (si hay pescando, tierra ... )
@@ -113,6 +113,10 @@ with tab_pok:
     probs = results["prob"]
     types = results["encounter"]
 
+    tipos_pok = results[0]
+    tipo1, tipo2 = tipos_pok["tipo1"], tipos_pok["tipo2"]
+    st.text(f"{tipo1},{tipo2}")
+
     col1, col2 = st.columns(2)
 
     with col1:
@@ -124,6 +128,7 @@ with tab_pok:
         file_.close()
         st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
                                                             unsafe_allow_html=True)
+        
 
     with col2:
         for loc, type, prob in zip(locations, types, probs):
