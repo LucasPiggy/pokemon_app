@@ -113,9 +113,9 @@ with tab_pok:
     probs = results["prob"]
     types = results["encounter"]
 
-    tipos_pok = results.reset_index()["tipo1"][0]
+    tipos_pok = results.reset_index()["tipo1"][0], results.reset_index()["tipo2"][0]
     st.text(tipos_pok)
-    st.text(f"{tipo1},{tipo2}")
+    
 
     col1, col2 = st.columns(2)
 
