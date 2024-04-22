@@ -34,10 +34,6 @@ with tab_ruta:
 
     search_res = data.loc[data["location"] == location]
     n_encounters = len(set(search_res["encounter"])) # Compruebas el num de encounters posibles (si hay pescando, tierra ... )
-    
-    st.table(search_res)
-    
-    # st.image('./mapa.png')
 
     map_file = open(f"./hoenn_json.json")
     map_data = json.load(map_file)
@@ -108,11 +104,24 @@ with tab_ruta:
 with tab_pok:
     data = pd.read_csv(r'./encountersCSV.csv',sep=";")
     tipos = set(data["tipo1"].dropna()).union(set(data["tipo2"].dropna()))
-    caja_tipo = st.selectbox("Tipo:", tipos, placeholder="Selecciona un Tipo")
+    caja_tipo = st.selectbox("Selecciona un tipo:", tipos, placeholder="Selecciona un Tipo")
     pok_options = data.loc[(data["tipo1"] == caja_tipo) | (data["tipo2"] == caja_tipo)]["pokemon"]
-    pokemon = st.selectbox("Select:",pok_options, placeholder="Selecciona un Pokémon")
-    st.text(pokemon)
-    
+    pokemon = st.selectbox("Selecciona un Pokémon:",pok_options, placeholder="Selecciona un Pokémon")
+
+    results = data.loc[data["pokemon"] == pokemon]
+    locations = results["location"]
+    probs = results["prob"]
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        funciones.get_sprite(pokemon)
+        file_ = open("./spriteGIF.gif", "rb")
+        contents4 = file_.read()
+        data_url4 = base64.b64encode(contents4).decode("utf-8")
+        file_.close()
+        st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="70" height="70" alt="gif">',
+                                                            unsafe_allow_html=True)
         
 
     
