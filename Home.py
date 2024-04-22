@@ -126,9 +126,11 @@ with tab_pok:
         file_.close()
         st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
                                                             unsafe_allow_html=True)
+
+        st.text("")
         for tipo in tipos_pok:
             if tipo in tipos:
-                st.image(Image.open(f'./tipos/{tipo}.png'), width = 75)
+                st.image(Image.open(f'./tipos/{tipo}.png'), width = 100)
             
         
 
