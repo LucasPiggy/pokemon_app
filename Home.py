@@ -115,13 +115,19 @@ with tab_pok:
     col1, col2 = st.columns(2)
 
     with col1:
+        st.text(f"¿Dónde encontrar a {pokemon}?")
         funciones.get_sprite(pokemon)
         file_ = open("./spriteGIF.gif", "rb")
         contents4 = file_.read()
         data_url4 = base64.b64encode(contents4).decode("utf-8")
         file_.close()
-        st.markdown(f'<img src="data:image/gif;base64,{data_url4}" width="70" height="70" alt="gif">',
+        st.markdown(f'<img src="data:image/gif;base64,{data_url4}" alt="gif">',
                                                             unsafe_allow_html=True)
+
+    with col2:
+        for loc, prob in zip(locations, probs):
+            st.text(f"Lugar: {loc} - {prob}%")
+            
         
 
     
