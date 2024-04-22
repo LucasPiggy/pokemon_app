@@ -111,6 +111,7 @@ with tab_pok:
     results = data.loc[data["pokemon"] == pokemon]
     locations = results["location"]
     probs = results["prob"]
+    types = results["encounter"]
 
     col1, col2 = st.columns(2)
 
@@ -125,8 +126,8 @@ with tab_pok:
                                                             unsafe_allow_html=True)
 
     with col2:
-        for loc, prob in zip(locations, probs):
-            st.text(f"Lugar: {loc} \n{prob}%")
+        for loc, type, prob in zip(locations, types, probs):
+            st.text(f"Lugar: {loc} \n¿Cómo?{type} \nProb:{prob}%")
             
         
 
