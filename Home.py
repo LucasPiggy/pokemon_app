@@ -113,7 +113,7 @@ with tab_pok:
     probs = results["prob"]
     types = results["encounter"]
 
-    tipos_pok = results[0]
+    tipos_pok = results.reset_index()[0]
     tipo1, tipo2 = tipos_pok["tipo1"], tipos_pok["tipo2"]
     st.text(f"{tipo1},{tipo2}")
 
