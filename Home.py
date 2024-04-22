@@ -105,7 +105,7 @@ with tab_pok:
     data = pd.read_csv(r'./encountersCSV.csv',sep=";")
     tipos = set(data["tipo1"].dropna()).union(set(data["tipo2"].dropna()))
     caja_tipo = st.selectbox("Selecciona un tipo:", tipos, placeholder="Selecciona un Tipo")
-    pok_options = data.loc[(data["tipo1"] == caja_tipo) | (data["tipo2"] == caja_tipo)]["pokemon"]
+    pok_options = set(data.loc[(data["tipo1"] == caja_tipo) | (data["tipo2"] == caja_tipo)]["pokemon"])
     pokemon = st.selectbox("Selecciona un Pokémon:",pok_options, placeholder="Selecciona un Pokémon")
 
     results = data.loc[data["pokemon"] == pokemon]
