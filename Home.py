@@ -127,7 +127,7 @@ with tab_pok:
 
     with col2:
         for loc, type, prob in zip(locations, types, probs):
-            st.text(f"Lugar: {loc} \n¿Cómo?{type} \nProb:{prob}%")
+            st.text(f"Lugar: {loc} \n¿Cómo?: {type} \nProb:{prob}% \n---------------------------------------------")
             
         
 
